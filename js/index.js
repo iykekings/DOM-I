@@ -75,3 +75,10 @@ mainContentTexts.forEach((content, i) => {
 });
 
 document.getElementById('middle-img').setAttribute('src', mcImgUrl);
+
+// contact
+const contactItems = document.querySelectorAll('.contact *');
+const contactTexts = Object.values(siteContent['contact']);
+contactItems.forEach((cItem, i) => {
+  cItem.textContent = contactTexts[i];
+});
