@@ -46,9 +46,18 @@ const siteContent = {
 let logo = document.getElementById('logo-img');
 logo.setAttribute('src', siteContent['nav']['img-src']);
 
-// Selectors
+// header
 const navMenus = document.querySelectorAll('nav a');
 
 navMenus.forEach((navItem, i) => {
   navItem.textContent = siteContent['nav'][`nav-item-${i + 1}`];
 });
+
+// cta
+const ctaLogo = document.getElementById('cta-img');
+ctaLogo.setAttribute('src', siteContent['cta']['img-src']);
+
+const ctaH1 = document.querySelector('.cta .cta-text h1');
+const ctaBtn = document.querySelector('.cta .cta-text button');
+ctaH1.textContent = siteContent['cta']['h1'];
+ctaBtn.textContent = siteContent['cta']['button'];
