@@ -48,19 +48,18 @@ logo.setAttribute('src', siteContent['nav']['img-src']);
 
 // header
 const navMenus = document.querySelectorAll('nav a');
-
 navMenus.forEach((navItem, i) => {
   navItem.textContent = siteContent['nav'][`nav-item-${i + 1}`];
+  navItem.style.color = 'green';
 });
 
 // cta
 const ctaLogo = document.getElementById('cta-img');
 ctaLogo.setAttribute('src', siteContent['cta']['img-src']);
-
-const ctaH1 = document.querySelector('.cta .cta-text h1');
-const ctaBtn = document.querySelector('.cta .cta-text button');
-ctaH1.textContent = siteContent['cta']['h1'];
-ctaBtn.textContent = siteContent['cta']['button'];
+document.querySelector('.cta .cta-text h1').textContent =
+  siteContent['cta']['h1'];
+document.querySelector('.cta .cta-text button').textContent =
+  siteContent['cta']['button'];
 
 // main-content
 const mainContentTexts = document.querySelectorAll(
@@ -73,7 +72,6 @@ mainContentTexts.forEach((content, i) => {
   content.querySelector('h4').textContent = h4;
   content.querySelector('p').textContent = p;
 });
-
 document.getElementById('middle-img').setAttribute('src', mcImgUrl);
 
 // contact
@@ -82,3 +80,16 @@ const contactTexts = Object.values(siteContent['contact']);
 contactItems.forEach((cItem, i) => {
   cItem.textContent = contactTexts[i];
 });
+
+// footer
+document.querySelector('footer p').textContent =
+  siteContent['footer']['copyright'];
+
+// .appendChild and .prepend
+const firstNav = document.createElement('a');
+firstNav.textContent = 'First';
+document.querySelector('nav').prepend(firstNav);
+
+const lastNav = document.createElement('a');
+lastNav.textContent = 'Last';
+document.querySelector('nav').appendChild(lastNav);
