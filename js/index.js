@@ -61,3 +61,17 @@ const ctaH1 = document.querySelector('.cta .cta-text h1');
 const ctaBtn = document.querySelector('.cta .cta-text button');
 ctaH1.textContent = siteContent['cta']['h1'];
 ctaBtn.textContent = siteContent['cta']['button'];
+
+// main-content
+const mainContentTexts = document.querySelectorAll(
+  '.main-content .text-content'
+);
+let mCValues = Object.values(siteContent['main-content']);
+const mcImgUrl = mCValues.splice(4, 1);
+mainContentTexts.forEach((content, i) => {
+  const [h4, p] = mCValues.slice(i * 2, i * 2 + 2);
+  content.querySelector('h4').textContent = h4;
+  content.querySelector('p').textContent = p;
+});
+
+document.getElementById('middle-img').setAttribute('src', mcImgUrl);
